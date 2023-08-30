@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language>
+<!-- Makefile syntaxfile v0.9 by Per Wigren <wigren@home.se> -->
+<language name="Snakemake" section="Other" version="1" kateversion="5.79" extensions="Snakefile" mimetype="text/x-makefile" priority="11" author="Benjamin Huth (benjamin-huth@t-online.de)" license="">
+
+  <!-- hhttps://github.com/snakemake/snakemake/blob/main/docs/snakefiles/writing_snakefiles.rst -->
+
+  <highlighting>
+    <list name="snakemake_keywords">
+      <item>include</item>
+      <item>workdir</item>
+      <item>module</item>
+      <item>configfile</item>
+      <item>userule</item>
+      <item>ni</item>
+      <item>norunparams</item>
+      <item>ruleparams</item>
+      <item>input</item>
+      <item>envvars</item>
+      <item>output</item>
+      <item>params</item>
+      <item>log</item>
+      <item>benchmark</item>
+      <item>cache</item>
+      <item>message</item>
+      <item>threads</item>
+      <item>priority</item>
+      <item>resources</item>
+      <item>version</item>
+      <item>conda</item>
+      <item>container</item>
+      <item>run</item>
+      <item>shell</item>
+      <item>script</item>
+      <item>notebook</item>
+      <item>moduleparams</item>
+      <item>snakefile</item>
+      <item>metawrapper</item>
+      <item>config</item>
+      <item>skipval</item>
+    </list>
+
+    <list name="rule_keyword">
+      <item>rule</item>
+    </list>
+
+    <contexts>
+
+      <context name="normal" attribute="Normal" lineEndContext="#stay">
+        <keyword attribute="Keyword" context="#stay" String="snakemake_keywords" />
+        <StringDetect attribute="Keyword" context="rule" String="rule"  />
+        <DetectChar attribute="String" context="string" char="&quot;" />
+        <DetectChar attribute="Comment" context="single_line_comment" char="#" />
+      </context>
+
+      <context name="string" attribute="String" lineEndContext="#stay"  >
+        <DetectChar attribute="String" context="#pop" char="&quot;" />
+      </context>
+
+      <context name="single_line_comment" attribute="Comment" lineEndContext="#pop"  >
+      </context>
+
+      <context name="rule" attribute="Rule" lineEndContext="#pop">
+        <keyword attribute="Keyword" context="#stay" String="rule_keyword" />
+        <DetectChar attribute="String" context="#pop" char=":" lookAhead="True" />
+      </context>
+
+    </contexts>
+
+    <itemDatas>
+      <itemData name="Normal" defStyleNum="dsNormal" spellChecking="0"/>
+      <itemData name="Keyword" defStyleNum="dsKeyword" spellChecking="0"/>
+      <itemData name="Comment" defStyleNum="dsComment"/>
+      <itemData name="String" defStyleNum="dsString" spellChecking="0"/>
+      <itemData name="Rule" defStyleNum="dsDecVal" spellChecking="0"/>
+    </itemDatas>
+
+  </highlighting>
+
+  <general>
+    <comments>
+      <comment name="singleLine" start="#"/>
+    </comments>
+    <!-- '-' is not a deliminator in function filter-out -->
+    <keywords casesensitive="1" weakDeliminator=".-"/>
+  </general>
+
+</language>
+<!-- kate: syntax XML; space-indent on; indent-width 4; replace-tabs on; -->
