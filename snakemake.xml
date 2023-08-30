@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE language>
-<!-- Makefile syntaxfile v0.9 by Per Wigren <wigren@home.se> -->
 <language name="Snakemake" section="Other" version="1" kateversion="5.79" extensions="Snakefile" mimetype="text/x-makefile" priority="11" author="Benjamin Huth (benjamin-huth@t-online.de)" license="">
 
   <!-- hhttps://github.com/snakemake/snakemake/blob/main/docs/snakefiles/writing_snakefiles.rst -->
